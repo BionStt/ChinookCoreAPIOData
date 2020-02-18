@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChinookCoreAPIOData.API", "ChinookCoreAPIOData.API\ChinookCoreAPIOData.API.csproj", "{54C9B1DC-C6BD-4D62-A7EA-367EFD1F2653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChinookCoreAPIOData.Domain", "ChinookCoreAPIOData.Domain\ChinookCoreAPIOData.Domain.csproj", "{30AD9637-7DD2-4BBE-A61F-7C979986E8B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChinookCoreAPIOData.Data", "ChinookCoreAPIOData.Data\ChinookCoreAPIOData.Data.csproj", "{789D29F7-6E79-40BF-9F96-BE61CFD40A31}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54C9B1DC-C6BD-4D62-A7EA-367EFD1F2653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54C9B1DC-C6BD-4D62-A7EA-367EFD1F2653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54C9B1DC-C6BD-4D62-A7EA-367EFD1F2653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54C9B1DC-C6BD-4D62-A7EA-367EFD1F2653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30AD9637-7DD2-4BBE-A61F-7C979986E8B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30AD9637-7DD2-4BBE-A61F-7C979986E8B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30AD9637-7DD2-4BBE-A61F-7C979986E8B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30AD9637-7DD2-4BBE-A61F-7C979986E8B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{789D29F7-6E79-40BF-9F96-BE61CFD40A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{789D29F7-6E79-40BF-9F96-BE61CFD40A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{789D29F7-6E79-40BF-9F96-BE61CFD40A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{789D29F7-6E79-40BF-9F96-BE61CFD40A31}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
