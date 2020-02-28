@@ -1,14 +1,10 @@
-﻿using ChinookCoreAPIOData.Data.Models;
+﻿using ChinookCoreAPIOData.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace ChinookCoreAPIOData.Data
 {
     public partial class ChinookContext : DbContext
     {
-        public ChinookContext()
-        {
-        }
-
         public ChinookContext(DbContextOptions<ChinookContext> options)
             : base(options)
         {
@@ -28,11 +24,6 @@ namespace ChinookCoreAPIOData.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=.;Database=Chinook;Trusted_Connection=True;");
-            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -50,7 +41,7 @@ namespace ChinookCoreAPIOData.Data
                     .HasMaxLength(160);
 
                 entity.HasOne(d => d.Artist)
-                    .WithMany(p => p.Album)
+                    .WithMany(p => p.Albums)
                     .HasForeignKey(d => d.ArtistId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Album__ArtistId__276EDEB3");
@@ -101,7 +92,7 @@ namespace ChinookCoreAPIOData.Data
                 entity.Property(e => e.State).HasMaxLength(40);
 
                 entity.HasOne(d => d.SupportRep)
-                    .WithMany(p => p.Customer)
+                    .WithMany(p => p.Customers)
                     .HasForeignKey(d => d.SupportRepId)
                     .HasConstraintName("FK__Customer__Suppor__2C3393D0");
             });
@@ -181,7 +172,7 @@ namespace ChinookCoreAPIOData.Data
                 entity.Property(e => e.Total).HasColumnType("numeric(10, 2)");
 
                 entity.HasOne(d => d.Customer)
-                    .WithMany(p => p.Invoice)
+                    .WithMany(p => p.Invoices)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Invoice__Custome__2D27B809");
@@ -201,13 +192,13 @@ namespace ChinookCoreAPIOData.Data
                 entity.Property(e => e.UnitPrice).HasColumnType("numeric(10, 2)");
 
                 entity.HasOne(d => d.Invoice)
-                    .WithMany(p => p.InvoiceLine)
+                    .WithMany(p => p.InvoiceLines)
                     .HasForeignKey(d => d.InvoiceId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__InvoiceLi__Invoi__2F10007B");
 
                 entity.HasOne(d => d.Track)
-                    .WithMany(p => p.InvoiceLine)
+                    .WithMany(p => p.InvoiceLines)
                     .HasForeignKey(d => d.TrackId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__InvoiceLi__Track__2E1BDC42");
@@ -241,13 +232,13 @@ namespace ChinookCoreAPIOData.Data
                     .HasName("IFK_Track_PlaylistTrack");
 
                 entity.HasOne(d => d.Playlist)
-                    .WithMany(p => p.PlaylistTrack)
+                    .WithMany(p => p.PlaylistTracks)
                     .HasForeignKey(d => d.PlaylistId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__PlaylistT__Playl__30F848ED");
 
                 entity.HasOne(d => d.Track)
-                    .WithMany(p => p.PlaylistTrack)
+                    .WithMany(p => p.PlaylistTracks)
                     .HasForeignKey(d => d.TrackId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__PlaylistT__Track__300424B4");
@@ -276,17 +267,17 @@ namespace ChinookCoreAPIOData.Data
                 entity.Property(e => e.UnitPrice).HasColumnType("numeric(10, 2)");
 
                 entity.HasOne(d => d.Album)
-                    .WithMany(p => p.Track)
+                    .WithMany(p => p.Tracks)
                     .HasForeignKey(d => d.AlbumId)
                     .HasConstraintName("FK__Track__AlbumId__286302EC");
 
                 entity.HasOne(d => d.Genre)
-                    .WithMany(p => p.Track)
+                    .WithMany(p => p.Tracks)
                     .HasForeignKey(d => d.GenreId)
                     .HasConstraintName("FK__Track__GenreId__2A4B4B5E");
 
                 entity.HasOne(d => d.MediaType)
-                    .WithMany(p => p.Track)
+                    .WithMany(p => p.Tracks)
                     .HasForeignKey(d => d.MediaTypeId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Track__MediaType__29572725");

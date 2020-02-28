@@ -1,4 +1,5 @@
-using ChinookCoreAPIOData.Data.Models;
+using ChinookCoreAPIOData.API.Configurations;
+using ChinookCoreAPIOData.Domain.Entities;
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNet.OData.Extensions;
 using Microsoft.AspNetCore.Builder;
@@ -22,9 +23,21 @@ namespace ChinookCoreAPIOData.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers(mvcOptions => 
-                mvcOptions.EnableEndpointRouting = false);
- 
+            services.AddConnectionProvider(Configuration);
+            services.ConfigureRepositories();
+            services.ConfigureSupervisor();
+            services.AddMiddleware();
+            services.AddConnectionProvider(Configuration);
+            services.AddAppSettings(Configuration);
+            services.AddCaching();
+            services.AddCORS();
+            
+            services.AddControllers();
+            services.AddMvc(options =>
+            {
+                options.EnableEndpointRouting = false;
+            }).SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
+
             services.AddOData();
         }
 
@@ -35,32 +48,33 @@ namespace ChinookCoreAPIOData.API
             {
                 app.UseDeveloperExceptionPage();
             }
+            
+            var builder = new ODataConventionModelBuilder(app.ApplicationServices);
  
             app.UseHttpsRedirection();
-            app.UseRouting();
             app.UseAuthorization();
  
             app.UseMvc(routeBuilder =>
             {
-                routeBuilder.Select().Filter();
-                routeBuilder.MapODataServiceRoute("odata", "odata", GetEdmModel());
+                routeBuilder.EnableDependencyInjection();
+                routeBuilder.Expand().Select().OrderBy().Filter();
+                routeBuilder.MapODataServiceRoute("ODataRoute", "api", GetEdmModel(builder));
             });
         }
         
-        IEdmModel GetEdmModel()
+        IEdmModel GetEdmModel(ODataConventionModelBuilder builder)
         {
-            var odataBuilder = new ODataConventionModelBuilder();
-            odataBuilder.EntitySet<Album>("Albums");
-            odataBuilder.EntitySet<Artist>("Artists");
-            odataBuilder.EntitySet<Customer>("Customers");
-            odataBuilder.EntitySet<Employee>("Employees");
-            odataBuilder.EntitySet<Genre>("Genres");
-            odataBuilder.EntitySet<Invoice>("Invoices");
-            odataBuilder.EntitySet<InvoiceLine>("InvoiceLines");
-            odataBuilder.EntitySet<MediaType>("MediaTypes");
-            odataBuilder.EntitySet<Playlist>("Playlists");
-            odataBuilder.EntitySet<Track>("Tracks");
-            return odataBuilder.GetEdmModel();
+            builder.EntitySet<Album>("Albums");
+            builder.EntitySet<Artist>("Artists");
+            builder.EntitySet<Customer>("Customers");
+            builder.EntitySet<Employee>("Employees");
+            builder.EntitySet<Genre>("Genres");
+            builder.EntitySet<Invoice>("Invoices");
+            builder.EntitySet<InvoiceLine>("InvoiceLines");
+            builder.EntitySet<MediaType>("MediaTypes");
+            builder.EntitySet<Playlist>("Playlists");
+            builder.EntitySet<Track>("Tracks");
+            return builder.GetEdmModel();
         }
     }
 }

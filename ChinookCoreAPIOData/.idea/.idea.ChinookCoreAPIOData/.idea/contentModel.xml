@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Chris Woodruff\.Rider2019.3\config\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\Chris Woodruff\.Rider2019.3\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\Chris Woodruff\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Chris Woodruff\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_ChinookCoreAPIOData.1824317039.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Chris Woodruff\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Chris Woodruff\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_ChinookCoreAPIOData.1824317039.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Chris Woodruff\AppData\Roaming\JetBrains\Rider2020.1\consoles\db" t="IncludeRecursive" />
+    <e p="C:\Users\Chris Woodruff\AppData\Roaming\JetBrains\Rider2020.1\extensions" t="IncludeRecursive" />
     <e p="D:\Git\ChinookCoreAPIOData\ChinookCoreAPIOData" t="IncludeFlat">
       <e p="ChinookCoreAPIOData.API" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
@@ -12,7 +12,10 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="ChinookCoreAPIOData.API.csproj" t="IncludeRecursive" />
         <e p="Configuration" t="Include">
+          <e p="AppSettings.cs" t="Include" />
+          <e p="ConfigureAppSettings.cs" t="Include" />
           <e p="ConfigureConnections.cs" t="Include" />
+          <e p="ServicesConfiguration.cs" t="Include" />
         </e>
         <e p="Controllers" t="Include">
           <e p="AlbumsController.cs" t="Include" />
@@ -50,12 +53,41 @@
             </e>
           </e>
         </e>
+        <e p="Repositories" t="Include">
+          <e p="AlbumRepository.cs" t="Include" />
+          <e p="ArtistRepository.cs" t="Include" />
+          <e p="CustomerRepository.cs" t="Include" />
+          <e p="EmployeeRepository.cs" t="Include" />
+          <e p="GenreRepository.cs" t="Include" />
+          <e p="InvoiceLineRepository.cs" t="Include" />
+          <e p="InvoiceRepository.cs" t="Include" />
+          <e p="MediaTypeRepository.cs" t="Include" />
+          <e p="PlaylistRepository.cs" t="Include" />
+          <e p="PlaylistTrackRepository.cs" t="Include" />
+          <e p="TrackRepository.cs" t="Include" />
+        </e>
       </e>
       <e p="ChinookCoreAPIOData.Domain" t="IncludeRecursive">
+        <e p="ApiModels" t="Include">
+          <e p="AlbumApiModel.cs" t="Include" />
+          <e p="ArtistApiModel.cs" t="Include" />
+          <e p="CustomerApiModel.cs" t="Include" />
+          <e p="EmployeeApiModel.cs" t="Include" />
+          <e p="GenreApiModel.cs" t="Include" />
+          <e p="InvoiceApiModel.cs" t="Include" />
+          <e p="InvoiceLineApiModel.cs" t="Include" />
+          <e p="MediaTypeApiModel.cs" t="Include" />
+          <e p="PlaylistApiModel.cs" t="Include" />
+          <e p="PlaylistTrackApiModel.cs" t="Include" />
+          <e p="TrackApiModel.cs" t="Include" />
+        </e>
         <e p="bin" t="ExcludeRecursive" />
         <e p="ChinookCoreAPIOData.Domain.csproj" t="IncludeRecursive" />
         <e p="Class1.cs" t="Include" />
-        <e p="Models" t="Include">
+        <e p="Converters" t="Include">
+          <e p="IConvertModel.cs" t="Include" />
+        </e>
+        <e p="Entities" t="Include">
           <e p="Album.cs" t="Include" />
           <e p="Artist.cs" t="Include" />
           <e p="Customer.cs" t="Include" />
@@ -68,12 +100,49 @@
           <e p="PlaylistTrack.cs" t="Include" />
           <e p="Track.cs" t="Include" />
         </e>
+        <e p="Exceptions" t="Include">
+          <e p="ApiExceptions.cs" t="Include" />
+        </e>
+        <e p="extensions" t="Include">
+          <e p="ConvertExtensions.cs" t="Include" />
+        </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
               <e p="ChinookCoreAPIOData.Domain.AssemblyInfo.cs" t="Include" />
             </e>
           </e>
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="IAlbumRepository.cs" t="Include" />
+          <e p="IArtistRepository.cs" t="Include" />
+          <e p="ICustomerRepository.cs" t="Include" />
+          <e p="IEmployeeRepository.cs" t="Include" />
+          <e p="IGenreRepository.cs" t="Include" />
+          <e p="IInvoiceLineRepository.cs" t="Include" />
+          <e p="IInvoiceRepository.cs" t="Include" />
+          <e p="IMediaTypeRepository.cs" t="Include" />
+          <e p="IPlaylistRepository.cs" t="Include" />
+          <e p="IPlaylistTrackRepository.cs" t="Include" />
+          <e p="ITrackRepository.cs" t="Include" />
+        </e>
+        <e p="Supervisor" t="Include">
+          <e p="ChinookSupervisor.cs" t="Include" />
+          <e p="ChinookSupervisorAlbum.cs" t="Include" />
+          <e p="ChinookSupervisorArtist.cs" t="Include" />
+          <e p="ChinookSupervisorCustomer.cs" t="Include" />
+          <e p="ChinookSupervisorEmployee.cs" t="Include" />
+          <e p="ChinookSupervisorGenre.cs" t="Include" />
+          <e p="ChinookSupervisorInvoice.cs" t="Include" />
+          <e p="ChinookSupervisorInvoiceLine.cs" t="Include" />
+          <e p="ChinookSupervisorMediaType.cs" t="Include" />
+          <e p="ChinookSupervisorPlaylist.cs" t="Include" />
+          <e p="ChinookSupervisorPlaylistTrack.cs" t="Include" />
+          <e p="ChinookSupervisorTrack.cs" t="Include" />
+          <e p="IChinookSupervisor.cs" t="Include" />
+        </e>
+        <e p="Validation" t="Include">
+          <e p="ApiModelValidation.cs" t="Include" />
         </e>
       </e>
       <e p="ChinookCoreAPIOData.sln" t="IncludeFlat" />
