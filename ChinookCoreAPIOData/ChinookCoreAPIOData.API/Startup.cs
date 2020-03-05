@@ -74,6 +74,20 @@ namespace ChinookCoreAPIOData.API
             builder.EntitySet<MediaType>("MediaTypes");
             builder.EntitySet<Playlist>("Playlists");
             builder.EntitySet<Track>("Tracks");
+            
+            builder.EntityType<Track>()
+                .Action("Rate")
+                .Parameter<int>("Rating");
+            
+            builder.EntityType<Track>()
+                .Collection
+                .Function("MostExpensive")
+                .Returns<double>();
+            
+            builder.Function("GetSalesTaxRate")
+                .Returns<double>()
+                .Parameter<int>("PostalCode");
+            
             return builder.GetEdmModel();
         }
     }

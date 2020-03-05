@@ -52,6 +52,11 @@ namespace ChinookCoreAPIOData.Data.Repositories
             return true;
         }
 
+        public decimal GetMostExpensiveTrack()
+        {
+            return _context.Track.Max(t => t.UnitPrice);
+        }
+
         public List<Track> GetByAlbumId(int id) =>
             _context.Track.Where(a => a.AlbumId == id).ToList();
 

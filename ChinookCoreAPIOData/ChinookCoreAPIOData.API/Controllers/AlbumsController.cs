@@ -51,26 +51,6 @@ namespace ChinookCoreAPIOData.API.Controllers
                 return StatusCode(500, ex);
             }
         }
-        
-        [EnableQuery()]
-        [HttpGet("artist/{id}")]
-        public ActionResult<List<AlbumApiModel>> GetByArtistId([FromRoute] int id)
-        {
-            try
-            {
-                var artist = _chinookSupervisor.GetArtistById(id);
-                if ( artist == null)
-                {
-                    return NotFound();
-                }
-
-                return Ok(_chinookSupervisor.GetAlbumByArtistId(id));
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, ex);
-            }
-        }
 
         [HttpPost]
         public ActionResult<AlbumApiModel> Post([FromBody] AlbumApiModel input)

@@ -103,5 +103,6 @@ namespace ChinookCoreAPIOData.Domain.Supervisor
 
         bool UpdateTrack(TrackApiModel trackApiModel);
         bool DeleteTrack(int id);
+        decimal GetMostExpensiveTrack();
     }
 }

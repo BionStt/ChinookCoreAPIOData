@@ -104,5 +104,7 @@ namespace ChinookCoreAPIOData.Domain.Supervisor
 
         public bool DeleteTrack(int id) 
             => _trackRepository.Delete(id);
+
+        public decimal GetMostExpensiveTrack() => _trackRepository.GetMostExpensiveTrack();
     }
 }

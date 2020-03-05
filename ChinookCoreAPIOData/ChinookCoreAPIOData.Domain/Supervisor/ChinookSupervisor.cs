@@ -1,4 +1,5 @@
-﻿using ChinookCoreAPIOData.Domain.Repositories;
+﻿using ChinookCoreAPIOData.Domain.ApiModels;
+using ChinookCoreAPIOData.Domain.Repositories;
 using ChinookCoreAPIOData.Domain.Validation;
 using Microsoft.Extensions.Caching.Memory;
 

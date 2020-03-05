@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using ChinookCoreAPIOData.Domain.ApiModels;
 using ChinookCoreAPIOData.Domain.Supervisor;
 using Microsoft.AspNet.OData;
+using Microsoft.AspNet.OData.Routing;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChinookCoreAPIOData.API.Controllers
@@ -80,11 +81,6 @@ namespace ChinookCoreAPIOData.API.Controllers
                     return NotFound();
                 }
 
-                // var errors = JsonConvert.SerializeObject(ModelState.Values
-                //     .SelectMany(state => state.Errors)
-                //     .Select(error => error.ErrorMessage));
-                // Debug.WriteLine(errors);
-
                 if (_chinookSupervisor.UpdateInvoice(input))
                 {
                     return Ok(input);
@@ -119,6 +115,13 @@ namespace ChinookCoreAPIOData.API.Controllers
             {
                 return StatusCode(500, ex);
             }
+        }
+        
+        [HttpGet("GetSalesTaxRate/{postalCode}")]
+        public ActionResult GetSalesTaxRate([FromODataUri] int postalCode)
+        {
+            const double rate = 5.6; // Use a fake number for the sample.
+            return Ok(rate);
         }
     }
 }

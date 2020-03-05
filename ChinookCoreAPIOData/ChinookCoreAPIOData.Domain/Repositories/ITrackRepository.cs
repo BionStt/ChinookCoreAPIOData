@@ -14,5 +14,6 @@ namespace ChinookCoreAPIOData.Domain.Repositories
         Track Add(Track newTrack);
         bool Update(Track track);
         bool Delete(int id);
+        decimal GetMostExpensiveTrack();
     }
 }

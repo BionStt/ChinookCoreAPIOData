@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Threading.Tasks;
 using ChinookCoreAPIOData.Domain.ApiModels;
 using ChinookCoreAPIOData.Domain.Supervisor;
 using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ChinookCoreAPIOData.API.Controllers
 {
@@ -119,6 +122,27 @@ namespace ChinookCoreAPIOData.API.Controllers
             {
                 return StatusCode(500, ex);
             }
+        }
+        
+        [HttpPost]
+        public ActionResult Rate([FromODataUri] int id, ODataActionParameters parameters)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            int rating = (int)parameters["Rating"];
+
+            return StatusCode(200, rating);
+        }
+        
+        [EnableQuery()]
+        [HttpGet("MostExpensive")]
+        public ActionResult MostExpensive()
+        {
+            var track = _chinookSupervisor.GetMostExpensiveTrack();
+            return Ok(track);
         }
     }
 }
