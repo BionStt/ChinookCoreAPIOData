@@ -1,4 +1,4 @@
-using ChinookCoreAPIOData.API.Configurations;
+using ChinookCoreAPIOData.API.Configuration;
 using ChinookCoreAPIOData.Domain.Entities;
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNet.OData.Extensions;

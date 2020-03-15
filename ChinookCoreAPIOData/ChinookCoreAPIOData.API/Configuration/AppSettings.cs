@@ -1,4 +1,4 @@
-﻿﻿namespace ChinookCoreAPIOData.API.Configurations
+﻿﻿namespace ChinookCoreAPIOData.API.Configuration
 {
     public abstract class AppSettings
     {

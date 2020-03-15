@@ -4,7 +4,7 @@ using ChinookCoreAPIOData.Domain.Supervisor;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace ChinookCoreAPIOData.API.Configurations
+namespace ChinookCoreAPIOData.API.Configuration
 {
     public static class ServicesConfiguration
     {

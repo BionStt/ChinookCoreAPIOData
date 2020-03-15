@@ -1,7 +1,7 @@
-﻿﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ChinookCoreAPIOData.API.Configurations
+namespace ChinookCoreAPIOData.API.Configuration
 {
     public static class ConfigureAppSettings
     {
