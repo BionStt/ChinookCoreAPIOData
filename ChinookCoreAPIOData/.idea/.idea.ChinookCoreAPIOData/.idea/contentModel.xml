@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Chris Woodruff\.nuget\packages\microsoft.net.test.sdk\16.6.0-preview-20200226-03\build\netcoreapp2.1" t="Include">
+    <e p="C:\Users\cwood\.nuget\packages\microsoft.net.test.sdk\16.6.0-preview-20200310-03\build\netcoreapp2.1" t="Include">
       <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
     </e>
-    <e p="C:\Users\Chris Woodruff\.nuget\packages\microsoft.testplatform.testhost\16.6.0-preview-20200226-03\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
-    <e p="C:\Users\Chris Woodruff\.nuget\packages\microsoft.testplatform.testhost\16.6.0-preview-20200226-03\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
-    <e p="C:\Users\Chris Woodruff\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
-    <e p="C:\Users\Chris Woodruff\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll" t="Include" />
-    <e p="C:\Users\Chris Woodruff\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
-    <e p="C:\Users\Chris Woodruff\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Chris Woodruff\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_ChinookCoreAPIOData.1824317039.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Chris Woodruff\AppData\Roaming\JetBrains\Rider2020.1\consoles\db" t="IncludeRecursive" />
-    <e p="C:\Users\Chris Woodruff\AppData\Roaming\JetBrains\Rider2020.1\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\cwood\.nuget\packages\microsoft.testplatform.testhost\16.6.0-preview-20200310-03\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\cwood\.nuget\packages\microsoft.testplatform.testhost\16.6.0-preview-20200310-03\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\cwood\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.reporters.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\cwood\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.utility.netcoreapp10.dll" t="Include" />
+    <e p="C:\Users\cwood\.nuget\packages\xunit.runner.visualstudio\2.4.1\build\netcoreapp1.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll" t="Include" />
+    <e p="C:\Users\cwood\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\cwood\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_ChinookCoreAPIOData.1824317039.00" t="ExcludeRecursive" />
     <e p="D:\Git\ChinookCoreAPIOData\ChinookCoreAPIOData" t="IncludeFlat">
       <e p="ChinookCoreAPIOData.API" t="IncludeRecursive">
         <e p="appsettings.Development.json" t="Include" />
